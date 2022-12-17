@@ -27,7 +27,7 @@ const LogIn = () => {
     );
     // console.log(user);
     if (user) {
-      navigate("/Register");
+      navigate("/Post");
     } else {
       alert("Wrong Code Entered");
     }
@@ -37,6 +37,11 @@ const LogIn = () => {
     const userGoogle = await signInWithPopup(auth, google);
 
     console.log(userGoogle);
+    if (userGoogle) {
+      navigate("/Post");
+    } else {
+      alert("Wrong Code Entered");
+    }
   };
   //   const handleGoogleLogin = async (event) => {
   //     event.preventDefault
